@@ -9,8 +9,10 @@
 <body>
     <input onblur="reverse(event)"/>
     <script>
-        function reverse(e) {
-            console.log(window.event.target.value)
+        function reverse(event) {
+            let e = event || window.event;
+            const isReverseString = e.target.value.split('').reverse().join('') === e.target.value;
+            alert(`${isReverseString ? '是' : '不是'}回文字符串`)
         }
     </script>
 </body>
