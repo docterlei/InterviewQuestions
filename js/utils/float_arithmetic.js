@@ -35,8 +35,6 @@ accAdd = (arg1, arg2) => {
     
     m = Math.pow(10, Math.max(l1, l2)); // 取较大的小说位数 并乘 10（较大数的10的 n 次幂）
 
-    
-
     return (accMultiply(arg1, m) + accMultiply(num2, m)) / m  //用了浮点相乘
 }
 
@@ -57,6 +55,5 @@ accSub = (arg1, arg2) => {
 
     m = Math.pow(10, Math.max(l1, l2));
    
-
     return (accMultiply(arg1, m) - accMultiply(arg2, m)) / m //用了浮点相乘
 }
