@@ -15,27 +15,25 @@
 <body>
     <div id="container"></div>
 <script id="jsbin-javascript">
-	/** 防抖（debounce）：
-		不管事件触发频率多高，一定在事件触发n秒后才执行，
-	    如果你在一个事件触发的 n 秒内又触发了这个事件，
-	 	就以新的事件的时间为准，n秒后才执行，
-	 	总之，触发完事件 n 秒内不再触发事件，n秒后再执行。
+	/** 节流（throttle）:
+		不管事件触发频率多高，只在单位时间内执行一次。
 	*/
-	function debounce(event, time, flag) {
+	function throttle(event, time) {
+      let pre = 0;
       let timer = null;
       return function (...args) {
-        clearTimeout(timer);
-        if (flag && !timer) {
+        if (Date.now() - pre > time) {
+          clearTimeout(timer);
+          timer = null;
+          pre = Date.now();
+          event.apply(this, args);
+        } else if (!timer) {
+          timer = setTimeout(() => {
             event.apply(this, args);
-        } 
-		
-		timer = setTimeout(() => {
-			timer = null;
-			event.apply(this, args);
-		}, time);
-      };
+          }, time);
+        }
+      }
     }
-
 
 	var count = 1;
 	var container = document.getElementById('container');
@@ -44,7 +42,7 @@
 		container.innerHTML = count++;
 	};
 
-	container.onclick = debounce(getUserAction, 2000, true);
+	container.onclick = throttle(getUserAction, 2000);
 </script>
 </body>
 </html>

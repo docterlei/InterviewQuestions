@@ -3,7 +3,7 @@ var a = { n : 1};
 var b = a;  
 a.x = a = {n:  2};  
 
-console(a.x);  
+console.log(a.x);  
 console.log(b.x);   
 
 输出：undefined [object Object]

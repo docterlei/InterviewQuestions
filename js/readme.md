@@ -8,4 +8,5 @@
 #### [模拟实现 bind](https://jsbin.com/sodiqar/edit?js,console)
 
 ## 函数系列
-#### [科里化 Currying](https://jsbin.com/sodiqar/edit?js,console)
+
+#### [深浅拷贝 clone](https://jsbin.com/toqetab/edit?js,console)
