@@ -1,5 +1,5 @@
 /**
-var arr = [ {id: 1024, name: '小熊'},
+var arr = [ {id: 1024, name: '小赖'},
   {id: 1021, name: '小熊'},
   {id: 1022, name: '小马'},
   {id: 1023, name: '小猪'},
