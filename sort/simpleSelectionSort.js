@@ -2,7 +2,7 @@
  * @Author: Guohui Lei 
  * @Date: 2020-08-13 20:40:06 
  * @Last Modified by: Guohui Lei
- * @Last Modified time: 2020-08-13 21:14:12
+ * @Last Modified time: 2020-10-12 22:49:29
  */
 
 
@@ -11,7 +11,6 @@
  var arr = [9,1,5,8,3,7,4,6,2,0];
  const selectSort = arr => {
      let minIndex = 0;
-     let count = 0;
      let temp = 0;
      for(let i = 0; i < arr.length; i++) {
          minIndex = i;
@@ -21,13 +20,12 @@
             }
          }
          if(i !== minIndex) {
-             count++;
             temp = arr[i];
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
          }
      }
-     return `arr=${arr}, count=${count}`
+     return `arr=${arr}`
  }
 
  console.log(selectSort(arr))

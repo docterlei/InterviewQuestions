@@ -2,7 +2,7 @@ setCookie = (key, val, expires = 0) => {
     if (expires !== 0 ) {      //设置cookie生存时间
         let date = new Date()
         date.setTime(date.getTime() + expires * 24 * 3600 * 1000)
-        expires = date.toGMTString();
+        expires = date.toUTCString();
 
         document.cookie = `${key}=${val}; expires=${expires}`
     } else {
@@ -10,17 +10,10 @@ setCookie = (key, val, expires = 0) => {
     }
 }
 
-getCookie = (key) => {
-    let strCookie = document.cookie
-    strCookie = strCookie.replace(/\s/g, '')
-    let arrCookie = strCookie.split(';')
-
-    for (let i = 0; i < arrCookie.length; i++) {
-        let arr = arrCookie[i].split('=');
-
-        if(key === arr[0]) {
-            return arr[1];
-        } 
-    }
-    return ''
+getCookie1 = key => {
+    const ojbCookie = {}
+    cookies = document.cookie.split('; ').forEach(item => {
+       ojbCookie[item.substring(0, item.indexOf('='))] = item.substring(item.indexOf('=') + 1, item.length)
+    })
+    return ojbCookie[key]
 }
