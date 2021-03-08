@@ -35,6 +35,9 @@ var pubsub = {
 pubsub.subscribe('eat', time => {
     console.log(`now is ${time},time to eat lunch`);
 })
+pubsub.subscribe('eat', time => {
+    console.log(`now is ${time},time to eat dinner`);
+})
 
 //注册work事件
 pubsub.subscribe('work', time => {

@@ -7,7 +7,7 @@ function myPromiseAll(promistArr) {
             promistArr[i].then(res => {
                 arr[i] = res;
                 count++;
-                if(count === length) {
+                if(count === promistArr.length) {
                     resolve(arr)
                 }
             }, err => reject(err))

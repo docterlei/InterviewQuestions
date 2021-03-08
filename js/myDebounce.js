@@ -1,10 +1,10 @@
 // 防抖
 const myDebounce = (fn, time) => {
     let timer = undefined;
-    return function() {
+    return function(...args) {
         clearTimeout(timer)
         timer = setTimeout(() => {
-            fn.apply(this, arguments)
+            fn.apply(this, args)
         }, time);
     }
 }
