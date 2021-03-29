@@ -9,7 +9,6 @@ function fibonacci(n) {
 
 console.log(fibonacci(2))
 
-
 /**
  * @description 求斐波那契数列第n项
  * @param {number} n 项目数
